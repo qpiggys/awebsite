@@ -17,9 +17,14 @@
   <body style="background-color:#0fff00">
     <h1 class ="text-center text-danger">Stuff</h1>
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="h2 text-center">Click me!</a>
-    <button type="button" class="btn-default">Default (test)</button>
+    <!--><button type="button" class="btn-default">Default (test)</button><-->
     <a href="page2.html" class="btn btn-info">button with link to page 2</a>
-    <button onclick="window.open("http://google.com")" class="button">Test Button</button>
+    <button onclick="testFunction()" class="button">Test Button</button>
     <p>work in progress shut up i know some of it is broken</p>
+    <script>
+      function testFunction() {
+        window.open("http://google.com");
+      }
+    </script>
   </body>
 </html>
