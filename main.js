@@ -34,7 +34,7 @@ const tubeDots = new THREE.Points(tubeGeo, pointMat);
 
 const clock = new THREE.Clock();
 
-scene.add( tubeDots);
+// scene.add( tubeDots);
 
 
 const loader = new FontLoader();
