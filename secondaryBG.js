@@ -34,8 +34,6 @@ const tubeDots = new THREE.Points(tubeGeo, pointMat);
 
 const clock = new THREE.Clock();
 
-scene.add( tubeDots);
-
 
 const loader = new FontLoader();
 loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
@@ -94,37 +92,6 @@ loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json
   scene.add(textMesh);
 });
 
-let textMesh;
-loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
-    // Create text geometry with the loaded font
-    const textGeometry = new TextGeometry('Matthew Shi', {
-        font: font,
-        size: 1,           // Size of the text
-        height: 0.2,       // Thickness of the text
-        curveSegments: 12, // Number of segments for curved areas
-        bevelEnabled: true,
-        bevelThickness: 0.05,
-        bevelSize: 0.03,
-        bevelOffset: 0,
-        bevelSegments: 5
-    });
-
-    // Create a material for the text
-    const textMaterial = new THREE.MeshBasicMaterial({ color: 0x000080 });
-
-    // Create a mesh with the geometry and material
-    textMesh = new THREE.Mesh(textGeometry, textMaterial);
-
-    // Position the text in the scene
-    textMesh.position.set(-3.853, 990, 0.35);
-    
-    textMesh.quaternion.setFromAxisAngle(new THREE.Vector3(-1, 0, 0), Math.PI / 2);
-
-    // Add the text mesh to the scene
-    scene.add(textMesh);
-
-});
-
 
 const particles = new THREE.BufferGeometry;
 
@@ -168,24 +135,15 @@ scene.add(particlesMeshFar);
 
 let tyme = 0;
 camera.position.copy(new THREE.Vector3(0,1000,0));
-tubeDots.position.x = 0;
-tubeDots.position.z = 0;
-tubeDots.quaternion.setFromAxisAngle(new THREE.Vector3(0,1,0), (Math.PI / 180) * 45 );
-tubeWalls.quaternion.setFromAxisAngle(new THREE.Vector3(0,1,0), (Math.PI / 180) * 45 );
 
 function render(){
 
     tyme += 0.01;
 
     camera.position.y -= 0.01;
-    if (textMesh && textMesh.position.y >= -960) {
-        textMesh.position.y -= 0.01;
-    }
 
     camera.quaternion.setFromAxisAngle(new THREE.Vector3(0, 1, 0), tyme / 10);
 
-    tubeWalls.rotation.y += 0.001;
-    tubeDots.rotation.y += 0.001;
     
     renderer.autoClear = false;
     renderer.clear();

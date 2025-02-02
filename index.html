@@ -12,7 +12,7 @@
         font-family: "Comic Neue";
       }
 
-      @keyframes glow {
+      @keyframes glowBlue {
         from {
           text-shadow: 0 0 12px #4BD5E7, 0 0 24px #4BD5E7, 0 0 36px #4BD5E7, 0 0 48px #4BD5E7;
         }
@@ -20,121 +20,47 @@
           text-shadow: 0 0 24px #4BD5E7, 0 0 36px #4BD5E7, 0 0 48px #4BD5E7, 0 0 64px #4BD5E7;
         }
       }
-      @keyframes profileGetBig {
-        from{
-          height: 200px;
+      @keyframes glowPurple {
+        from {
+          text-shadow: 0 0 12px #FF45B6, 0 0 24px #FF45B6, 0 0 36px #FF45B6, 0 0 48px #FF45B6; 
         }
         to {
-          height: calc(600px - 20vw);
+          text-shadow: 0 0 24px #FF45B6, 0 0 36px #FF45B6, 0 0 48px #FF45B6, 0 0 64px #FF45B6;
+        }
+      }
 
-        }
-      }
-      @keyframes profileGetSmall {
-        from{
-          height: calc(600px - 20vw);
-        }
-        to {
-          height: 200px;
-        }
-      }
-      @keyframes textSlideFadeIn {
-        0% {
-          opacity: 0;
-          transform: translateY(-100px);
-        }
-        50%{
-          opacity:0;
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0px);
-          display: block;
-        }
-      }
-      @keyframes textSlideFadeOut {
-        0% {
-          opacity: 1;
-          transform: translateY(0px);
-        }
-        40%{
-          opacity:0;
-        }
-        100% {
-          opacity: 0;
-          transform: translateY(-100px);
-          display: none;
-        }
-      }
-      .glow {
+      .glowBlue {
         font-size: 64px;
         color: #86dce7;
         text-align: center;
-        animation: glow 1s ease-in-out infinite alternate;
+        animation: glowBlue 1s ease-in-out infinite alternate;
       }
-      .button{
-        border: none;
-        color: red;
-        text-align: center;
-        font-size: 16px;
-        text-decoration: none;
-        display: inline-block;
-      }
-      #buttonLearnMore{
-        opacity: 1;
-        transition: ease-in-out 0.25s;
-      }
-      #buttonLearnMore:hover{
-        opacity: 0.9;
-        transition: ease-in-out 0.25s;
-      }
-      #learnMoreDiv:hover{
-        transform: rotate3d(0.15, 1, 0, 20deg);
-        transition:ease-in-out 0.25s;
-        box-shadow: -20px 10px 20px #000000;
-      }
-      #learnMoreDiv{
-        transition:ease-in-out 0.25s;
-        height:200px;
-      }
-      .getBig{
-        animation: profileGetBig ease-in-out 0.5s forwards;
-      }
-      .getSmall{
-        animation: profileGetSmall ease-in-out 0.5s forwards;
-      }
-      .textIn{
-        animation: textSlideFadeIn ease-in-out 0.5s forwards;
-      }
-      .textOut{
-        animation: textSlideFadeOut ease-in-out 0.5s forwards;
+      .glowPurple {
+        font-size: 64px;
+        color: #ff51b9;
+        text-align: cetner;
+        animation: glowPurple 1s ease-in-out infinite alternate;
       }
       
     </style>
   </head>
   <body>
 
-    <div id="myScene" style="position: fixed; width: 100vw; height: 100vh; z-index: -1000;"></div>
-
-    <div style="height:auto;">
-
-      <div class="text-center container py-5 mt-4" id="learnMoreDivAAAAA">
-        <h1 class="text-info glow" style="font-size: 80px">Matthew Shi</h1>
-        <!-- <button class="btn btn-success border border-dark border-5 px-5 py-2 fw-bold rounded-pill" onclick="openComp('profile')" id="buttonLearnMore">Learn More</button> -->
-        <!-- <p class="fs-5 mt-3 text-info" style="opacity:0;" id="learnMoreText">Matthew Shi is an ambitious student with a passion for technology and swimming. As a member of the LifeTime Swim Metro team, he excels in the pool, while also being an active part of the CSII Club, where his love for web development shines. Handsome and charismatic, Matthew also enjoys playing Star Wars: The Old Republic in his free time, balancing his interests in both sports and gaming.</p> -->
-        <p class="text-success" style="font-size: 24px; font-style: italic;">Dedication outlasts motivation, but motivation brings you over the finish line.</p>
-      </div>
-      
-    </div>
+    <div id="myScene" style="position: fixed; width: 100vw; height: 100vh; z-index: -1;"></div>
     
-    <div class="text-center">
-      <h1 class="glow" style="color: #Fe37af"> Activities </h1>
-      <p class="text-info" style="font-size: 20px">LifeTime Swim Metro</p>
-      <p class="text-info" style="font-size: 20px">Kids 2 Kids Mentoring</p>
-      <p class="text-info" style="font-size: 20px">MHS CSII Club</p>
-      <p class="text-info" style="font-size: 20px">Logistem Linguistics</p>
-      <!-- <a href="drawings.html" class="text-info" style="font-size: 20px"> I like drawing too; Click to view some of my work</p> -->
-
+    <div style="flood-opacity: 60%; background-color: rgba(0, 0, 0, 0.6);" class="text-center">
+      <a style="background-color: rgba(0,0,0,0.6)" class="btn shadow-none text-success fs-6 mr-5" href="index.html">
+        Home
+      </a>
+      <a style="background-color: rgba(0,0,0,0.6)" class="btn shadow-none text-success fs-6 mr-5" href="aboutme.html">
+        About Me
+      </a>
+      <a style="background-color: rgba(0,0,0,0.6)" class="btn shadow=none text-success fs-6 mr-5" href="misc.html">
+        Misc.
+      </a>
     </div>
+
+    
 
     <script type="importmap">
       {
@@ -146,30 +72,5 @@
     </script>
     <script type="module" src="main.js"></script>
     
-    <script>
-      var text = document.getElementById("learnMoreText");
-      var profileDiv = document.getElementById("learnMoreDiv");
-      var testProfile = false;
-      var testQualifications = false;
-      function openComp(type) {
-        if(type == "profile"){
-          if (!testProfile) {
-            testProfile = true;
-            profileDiv.classList.remove("getSmall");
-            profileDiv.classList.add("getBig");
-            text.classList.remove("textOut");
-            text.classList.add("textIn");
-          }
-          else {
-            testProfile = false;
-            profileDiv.classList.remove("getBig");
-            profileDiv.classList.add("getSmall");
-            text.classList.remove("textIn");
-            text.classList.add("textOut");
-          }
-        } 
-      }
-      
-    </script>
   </body>
 </html>
